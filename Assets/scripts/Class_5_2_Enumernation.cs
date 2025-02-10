@@ -58,8 +58,36 @@ namespace Inferno
         private void Start()
         {
             Debug.Log((int)item);
+
+
+
+
+            // 列舉與判斷式 Switch
+            // switch +Tab * 2 >修改 Switch_on 為列舉 > Enter * 2 快速完成
+            switch (item)
+            {
+                case Item.None:
+                    Debug.Log("沒有道具");
+                    break;
+
+                case Item.Coin:
+                    Debug.Log("金幣");
+                    break;
+                case Item.RedPotion:
+                    Debug.Log("紅色藥水");
+                    break;
+                case Item.BluePotion:
+                    Debug.Log("藍色藥水");
+                    break;
+                case Item.Dick:
+                    Debug.Log("大鵰陳冠吸");
+                    break;
+            }
+
         }
 
+
+        
     }
 }
 
