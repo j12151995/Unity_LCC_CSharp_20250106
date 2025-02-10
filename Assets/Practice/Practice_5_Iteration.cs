@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+//這是作業
 public class Practice_5_Iteration : MonoBehaviour
 {
     [SerializeField, Header("血量"), Range(0, 100)]
