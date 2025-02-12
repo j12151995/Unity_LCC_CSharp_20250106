@@ -34,6 +34,23 @@ namespace Inferno
 
         }
 
+        public Class_7_2_slime slimeGreen, slimePurple;
+
+        private void Start()
+        {
+            //非靜態成員  (擁有個別數值 可以個別存取)
+            slimeGreen.hp -= 10;
+            Debug.Log($"<color=#3f3>綠水靈 Hp : {slimeGreen.hp}</color>");
+            slimePurple.hp -= 10;
+            Debug.Log($"<color=#3f3>惡魔水靈 Hp : {slimePurple.hp}</color>");
+
+            //靜態成員
+            //靜態成員沒有辦法透過個體存取
+            // slimeGreen.moveSpeed = 3.5f;   <---會顯示錯誤
+            Class_7_2_slime.moveSpeed = 3.5f;
+            Debug.Log($"<color=#3f3>史萊姆移動速度 : {Class_7_2_slime.moveSpeed}</color>");
+
+        }
 
     }
 }

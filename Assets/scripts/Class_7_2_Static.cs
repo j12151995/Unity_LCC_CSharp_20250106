@@ -22,8 +22,10 @@ namespace Inferno
         //非靜態屬性
         public string skillMain => "火球術";
         //靜態屬性
-        public static string skillSecond => "祕法強化"; 
+        public static string skillSecond => "祕法強化";
 
+        private float attack = 10;
+        private static float mp = 100;
 
         private void Awake()
         {
@@ -39,13 +41,22 @@ namespace Inferno
 
         public void Punch()
         {
-            Debug.Log($"<color=#3f3>使用拳擊</color>");
+            Debug.Log($"<color=#3f3>非靜態方法使用拳擊</color>");
+            //非靜態方法內可以存取所有成員 (包含靜態的 跟非靜態的)
+            Debug.Log($"<color=#f9e>非靜態攻擊力 : {attack}</color>");
+            Debug.Log($"<color=#f9e>靜態魔力 : {mp}</color>");
 
         }
 
         public static void Kick()
         {
-            Debug.Log($"<color=#3f3>使用踢擊</color>");
+            Debug.Log($"<color=#3f3>靜態方法 : 使用踢擊</color>");
+            //靜態方法內只能夠存取靜態的成員
+            //由於attack 是非靜態所以無法存取(會有錯誤)
+           // Debug.Log($"<color=#f9e>非靜態攻擊力 : {attack}</color>");   <----錯誤
+            Debug.Log($"<color=#f9e>靜態魔力 : {mp}</color>");      // <----MP是靜態的所以可以存取
+           
+
         }
 
         private void Start()
