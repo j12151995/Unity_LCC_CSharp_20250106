@@ -14,11 +14,13 @@ namespace Inferno
         private void Awake()
         {
             // 實例化 NPC 並儲存在 npcMotherFucker 變數內
-             Class_8_1_NPC npcMotherFucker = new Class_8_1_NPC();   
-             Class_8_1_NPC npcGodDamnIt = new Class_8_1_NPC("GodDamnIt");
+             Class_8_1_NPC npcMotherFucker = new Class_8_1_NPC("媽惹發克");   
+             Class_8_1_NPC npcGodDamnIt = new Class_8_1_NPC("GodDamnIt", "哭啊!妳媽死了!");
 
             npcMotherFucker.LogName();
             npcGodDamnIt.LogName();
+            npcGodDamnIt.Talk();
+            npcMotherFucker.Talk();
         }
 
 

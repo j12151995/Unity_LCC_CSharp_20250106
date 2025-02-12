@@ -17,9 +17,13 @@ namespace Inferno
             Debug.Log($"<color=#9f9>預設建構子</color>");
         }
 
-        public Class_8_1_NPC(string _name)
+        //建構子的簡寫
+        public Class_8_1_NPC(string _name) => name = _name;
+
+        public Class_8_1_NPC(string _name, string _dialogue)
         {
             name = _name;
+            dialogue = _dialogue;
             Debug.Log($"<color=#9f9>有參數的建構子</color>");
 
         }
