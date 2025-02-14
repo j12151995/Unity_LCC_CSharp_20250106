@@ -53,7 +53,7 @@ namespace Inferno
 
 
         //屬性簡寫 
-        public float hp { get; set; } = 100;
+        public float Mp { get; set; } = 100;
 
         //屬性標準寫法
         // 用來裝屬性 mp 的容器
