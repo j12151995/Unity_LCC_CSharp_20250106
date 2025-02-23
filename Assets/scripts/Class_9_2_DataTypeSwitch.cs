@@ -1,18 +1,19 @@
-using Rondo.Tools;
+ï»¿using Rondo.Tools;
 using UnityEngine;
+using System;
 namespace Inferno
 {
 
     /// <summary>
-    /// ¸ê®ÆÃş«¬Âà´«
+    /// è³‡æ–™é¡å‹è½‰æ›
     /// </summary>
     public class Class_9_2_DataTypeSwitch : MonoBehaviour
     {
 
         private void Awake()
         {
-            // Áô¦¡Âà´« : ¤£»İ­n¥t¥~«Å§iÂà´«Ãş«¬
-            // ±N[¤p]ªº¸ê®Æ©ñ¨ì[¤j]ªº¸ê®Æ¤º
+            // éš±å¼è½‰æ› : ä¸éœ€è¦å¦å¤–å®£å‘Šè½‰æ›é¡å‹
+            // å°‡[å°]çš„è³‡æ–™æ”¾åˆ°[å¤§]çš„è³‡æ–™å…§
             byte byte1 = 1;
             int int1 = 0;
 
@@ -20,8 +21,8 @@ namespace Inferno
             Logsystem.LogWithColor(byte1.GetType(), "#7f7");
             Logsystem.LogWithColor(int1, "#7f7");
             Logsystem.LogWithColor(int1.GetType(), "#7f7");
-            //Áô¦¡Âà´« : ±N¤ñ¸û¤pªº byte ©ñ¨ì¤jªº int
-            // Áô¤h¸ê®ÆÂà´«
+            //éš±å¼è½‰æ› : å°‡æ¯”è¼ƒå°çš„ byte æ”¾åˆ°å¤§çš„ int
+            // éš±å£«è³‡æ–™è½‰æ›
             int1 = byte1;
             Logsystem.LogWithColor(int1,"#7f7");
             Logsystem.LogWithColor(int1.GetType(), "#7f7");
@@ -33,26 +34,26 @@ namespace Inferno
             Logsystem.LogWithColor(int2, "#7f7");
             Logsystem.LogWithColor(int2.GetType(), "#7f7");
 
-            // Åã¦¡Âà´« : »İ­n«Å§iÂà´«ªºÃş«¬
-            // ±N[¤j]ªº¸ê®Æ©ñ¨ì[¤p]ªº¸ê®Æ¤º
-            // »İ­n¦b«e­±²K¥[(¸ê®ÆÃş«¬)
-            //byte2 = int2;   <---¦]¬°¨S¦³²K¥[¸ê®ÆÃş«¬ ·|Åã¥Ü¿ù»~ 
+            // é¡¯å¼è½‰æ› : éœ€è¦å®£å‘Šè½‰æ›çš„é¡å‹
+            // å°‡[å¤§]çš„è³‡æ–™æ”¾åˆ°[å°]çš„è³‡æ–™å…§
+            // éœ€è¦åœ¨å‰é¢æ·»åŠ (è³‡æ–™é¡å‹)
+            //byte2 = int2;   <---å› ç‚ºæ²’æœ‰æ·»åŠ è³‡æ–™é¡å‹ æœƒé¡¯ç¤ºéŒ¯èª¤ 
             byte2 = (byte)int2;
             Logsystem.LogWithColor(byte2, "#1a1");
             Logsystem.LogWithColor(byte2.GetType(), "#1a1"); 
 
             //-------------------
-            // ¯BÂI¾ğÂà´«¬°¾ã¼ÆÃş§O
+            // æµ®é»æ¨¹è½‰æ›ç‚ºæ•´æ•¸é¡åˆ¥
             float float1 = 3.5f;
             byte byte3 = 0;
             byte3 = (byte)float1;
             Logsystem.LogWithColor(byte3, "#77a");
             Logsystem.LogWithColor(byte3.GetType(), "#77a");
-            //´ú¸Õ§¹¤§«á·|µo²{­ì¥»Äİ©ó¯BÂI¼Æªº3.5 Âà´«¦¨byte¤§«á·|ÅÜ¦¨3 ¦]¬°byte¤£·|¬ö¿ı¤p¼ÆÂI
+            //æ¸¬è©¦å®Œä¹‹å¾Œæœƒç™¼ç¾åŸæœ¬å±¬æ–¼æµ®é»æ•¸çš„3.5 è½‰æ›æˆbyteä¹‹å¾Œæœƒè®Šæˆ3 å› ç‚ºbyteä¸æœƒç´€éŒ„å°æ•¸é»
 
             //-------------------------------------------------------
-            //½d³ò¸û¤jªºÂà´«¬°½d³ò¸û¤pªº¡A·|¾É­P¯q¨ı(¶W¹Lªº¼Æ­È·|­«·s¶}©lºâ)
-            //¨Ò¦pbyte0~255 ¶W¹L255 ´N·|­«0¶}©l ||>  ©Ò¥H¼Æ¦r³]©w256 ·|Åã¥Ü0  257·|Åã¥Ü1
+            //ç¯„åœè¼ƒå¤§çš„è½‰æ›ç‚ºç¯„åœè¼ƒå°çš„ï¼Œæœƒå°è‡´ç›Šå‘³(è¶…éçš„æ•¸å€¼æœƒé‡æ–°é–‹å§‹ç®—)
+            //ä¾‹å¦‚byte0~255 è¶…é255 å°±æœƒé‡0é–‹å§‹ ||>  æ‰€ä»¥æ•¸å­—è¨­å®š256 æœƒé¡¯ç¤º0  257æœƒé¡¯ç¤º1
             int int3 = 257;
             byte byte4 = 0;
             byte4 = (byte)int3;
@@ -60,6 +61,38 @@ namespace Inferno
             Logsystem.LogWithColor("---------", "#77a");
 
 
+
+
+        }
+
+        private void Start()
+        {
+            // å°‡æ•´æ•¸è½‰ç‚ºå­—ä¸²
+            int count = 99;
+            Logsystem.LogWithColor(count.GetType(), "#7f7");
+
+            var inToString = Convert.ToString(count);
+            Logsystem.LogWithColor(inToString.GetType(), "#7f7");
+
+            //å°‡å¸ƒæ—å€¼è½‰ç‚ºå­—ä¸²
+            bool isOver = false;
+            Logsystem.LogWithColor(isOver.GetType(), "#7f7");
+
+            var boolToString = Convert.ToString(isOver);
+            Logsystem.LogWithColor(boolToString.GetType(), "#7f7");
+
+            //å°‡æµ®é»æ•¸è½‰ç‚ºbyte
+            float move = 8.7f;
+            var floatToByte = Convert.ToByte(move);
+            Logsystem.LogWithColor(floatToByte, "#7f7");
+            Logsystem.LogWithColor(floatToByte.GetType(), "#7f7");
+
+            //å°‡å¸ƒæ—å€¼è½‰æ›ç‚ºByte
+            //è½‰æ›å®Œæˆä¹‹å¾Œ æœƒç™¼ç¾ true = 1  ï¼Œ flase = 0ã€‚
+            bool isGrounded = true;
+            var boolToByte = Convert.ToByte(isGrounded);
+            Logsystem.LogWithColor(isGrounded, "#7f7");                
+            Logsystem.LogWithColor(boolToByte.GetType(), "#7f7");
 
 
         }

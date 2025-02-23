@@ -1,34 +1,34 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 namespace Inferno
 {
 
     /// <summary>
-    /// ½m²ß¨ú±o»P³]©wÀRºA¸ê®Æ
+    /// ç·´ç¿’å–å¾—èˆ‡è¨­å®šéœæ…‹è³‡æ–™
     /// </summary>
     public class Class_7_2_GetSetStaticData : MonoBehaviour
     {
-        //¨ú±o«DÀRºA¸ê®Æ(¦¨­û)
-        //1. ¥ı©w¸q­nÀò±o¸ê®ÆÃş§OªºÅÜ¼Æ
-        //2. ³z¹LÅÜ¼Æ¨ú±o«DÀRºA¸ê®Æ(¦¨­û)
+        //å–å¾—ééœæ…‹è³‡æ–™(æˆå“¡)
+        //1. å…ˆå®šç¾©è¦ç²å¾—è³‡æ–™é¡åˆ¥çš„è®Šæ•¸
+        //2. é€éè®Šæ•¸å–å¾—ééœæ…‹è³‡æ–™(æˆå“¡)
 
 
         public Class_7_2_Static class_7_2;
 
         private void Awake()
         { 
-            //¨ú±o«DÀRºAÅÜ¼Æ
-            //ÅÜ¼Æ¦WºÙ.«DÀRºA¦¨­û
-            Debug.Log($"<color=#f3d>«DÀRºA¦¨­û : {class_7_2.inventoryWater}</color>");
+            //å–å¾—ééœæ…‹è®Šæ•¸
+            //è®Šæ•¸åç¨±.ééœæ…‹æˆå“¡
+            Debug.Log($"<color=#f3d>ééœæ…‹æˆå“¡ : {class_7_2.inventoryWater}</color>");
             
-            //¨ú±o«DÀRºAÄİ©Ê
-            Debug.Log($"<color=#3f3>«DÀRºAÄİ©Ê : {class_7_2.skillMain}</color>");
-            //©I¥s«DÀRºA¤èªk
+            //å–å¾—ééœæ…‹å±¬æ€§
+            Debug.Log($"<color=#3f3>ééœæ…‹å±¬æ€§ : {class_7_2.skillMain}</color>");
+            //å‘¼å«ééœæ…‹æ–¹æ³•
             class_7_2.Punch();
            
-            //¨ú±oÀRºA¸ê®Æ(¦¨­û)
-            //Ãş§O¦WºÙ.ÀRºA¦¨­û
-            Debug.Log($"<color=#f3d>ÀRºA¦¨­û : {Class_7_2_Static.inventoryProp}</color>");
-            //¨ú±oÀRºAÄİ©Ê
+            //å–å¾—éœæ…‹è³‡æ–™(æˆå“¡)
+            //é¡åˆ¥åç¨±.éœæ…‹æˆå“¡
+            Debug.Log($"<color=#f3d>éœæ…‹æˆå“¡ : {Class_7_2_Static.inventoryProp}</color>");
+            //å–å¾—éœæ…‹å±¬æ€§
 
 
 
@@ -38,17 +38,17 @@ namespace Inferno
 
         private void Start()
         {
-            //«DÀRºA¦¨­û  (¾Ö¦³­Ó§O¼Æ­È ¥i¥H­Ó§O¦s¨ú)
+            //ééœæ…‹æˆå“¡  (æ“æœ‰å€‹åˆ¥æ•¸å€¼ å¯ä»¥å€‹åˆ¥å­˜å–)
             slimeGreen.hp -= 10;
-            Debug.Log($"<color=#3f3>ºñ¤ôÆF Hp : {slimeGreen.hp}</color>");
+            Debug.Log($"<color=#3f3>ç¶ æ°´éˆ Hp : {slimeGreen.hp}</color>");
             slimePurple.hp -= 10;
-            Debug.Log($"<color=#3f3>´cÅ]¤ôÆF Hp : {slimePurple.hp}</color>");
+            Debug.Log($"<color=#3f3>æƒ¡é­”æ°´éˆ Hp : {slimePurple.hp}</color>");
 
-            //ÀRºA¦¨­û
-            //ÀRºA¦¨­û¨S¦³¿ìªk³z¹L­ÓÅé¦s¨ú
-            // slimeGreen.moveSpeed = 3.5f;   <---·|Åã¥Ü¿ù»~
+            //éœæ…‹æˆå“¡
+            //éœæ…‹æˆå“¡æ²’æœ‰è¾¦æ³•é€éå€‹é«”å­˜å–
+            // slimeGreen.moveSpeed = 3.5f;   <---æœƒé¡¯ç¤ºéŒ¯èª¤
             Class_7_2_slime.moveSpeed = 3.5f;
-            Debug.Log($"<color=#3f3>¥vµÜ©i²¾°Ê³t«× : {Class_7_2_slime.moveSpeed}</color>");
+            Debug.Log($"<color=#3f3>å²èŠå§†ç§»å‹•é€Ÿåº¦ : {Class_7_2_slime.moveSpeed}</color>");
 
         }
 
