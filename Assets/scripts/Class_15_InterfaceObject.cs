@@ -27,6 +27,10 @@ namespace Inferno_class_15
         public void Use();
     }
 
+    public interface IDestory
+    {
+        public void Destory();
+    }
     // 步驟 : 2
     // C# 單一繼承，多重實作介面
     public class Weapon : IUse     //使用黃色燈泡 --> 實作介面
@@ -38,16 +42,25 @@ namespace Inferno_class_15
         }
     }
 
-    public class Potion : IUse
+    public class Potion : IUse, IDestory
     {
         public void Use()
         {
             Logsystem.LogWithColor("使用威而鋼，我很硬", "#a3f");
         }
+        public void Destory()
+        {
+            Logsystem.LogWithColor("威而鋼使用完畢，已消耗", "#f11");
+        }
     }
 
-    public class Chest : IUse
+    public class Chest : IUse , IDestory 
     {
+        public void Destory()
+        {
+            Logsystem.LogWithColor("已使用寶箱", "#f11");
+
+        }
         public void Use()
         {
             Logsystem.LogWithColor("開啟寶相，獲得隨機物品", "#3fa");

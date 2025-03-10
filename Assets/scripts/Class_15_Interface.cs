@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using Rondo.Tools;
-namespace Inferno_Class_15
+namespace Inferno_class_15
 {
     /// <summary>
     /// 介面
@@ -9,6 +9,7 @@ namespace Inferno_Class_15
     public class Class_15_Interface : MonoBehaviour
     {
         public object inventoryFirst;
+        public object inventorySecond;
         private void Awake()
         {
             int random = Random.Range(0, 3);    // 隨機0~3 (但是不會出現右邊那個數字，也就是3)
@@ -17,12 +18,18 @@ namespace Inferno_Class_15
             if (random == 0) inventoryFirst = new Prop();
             if (random == 1) inventoryFirst = new Equipment();
             if (random == 2) inventoryFirst = new Map();
+
+
+            int randomSecond = Random.Range(0, 3);    // 隨機0~3 (但是不會出現右邊那個數字，也就是3)
+            if (random == 0) inventorySecond = new Weapon();
+            if (random == 1) inventorySecond = new Potion();
+            if (random == 2) inventorySecond = new Chest();
         }
 
         private void Update()
         {
             //按下數字鍵 1 可以使用第一個道具
-            if (Input.GetKeyDown(KeyCode.Alpha2))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 //如果第一格是道具，就使用道具
                 if (inventoryFirst is Prop) ((Prop)inventoryFirst).Use();
@@ -35,6 +42,20 @@ namespace Inferno_Class_15
 
                 // 結論 : 只有三個物品 就要寫出三個判斷式
                 //        所以當遊戲的物品種類繁多的時候，這邊要寫的東西是很多的。
+            }
+
+             // --------以上沒有介面-----------------------
+             // --------以下有介面------------------------
+             
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                // 如果第二格道具的物品有實作介面，就使用實作介面
+                if (inventorySecond is IUse) ((IUse)inventorySecond).Use();
+                // 消耗型物品 使用完畢銷毀
+                if (inventorySecond is IDestory) ((IDestory)inventorySecond).Destory();
+                
+                // 如果擴充物品，判斷式不需要添加，只需要讓物品都實作介面即可。
+                // 結論 : 有使用介面 就不用寫這麼多判斷式 。
             }
         }
 
